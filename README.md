@@ -1,4 +1,4 @@
-<pre style="line-height: 1.25;">
+<pre style="line-height: 0.8;">
             ____                   __                                         
            /\  _`\   __           /\ \                                        
            \ \ \L\ \/\_\     __   \_\ \  _ __    __                           
