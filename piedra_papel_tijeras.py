@@ -160,7 +160,7 @@ def main():
             fullart()
 
 # Por comodidad, y para asegurar la uniformidad visual, utilizaremos siempre esta variable como separador.
-        separator = "\n*******************************************************************************\n"
+        separator = "\n****************************************************************************************\n"
 
         print(separator)
 
@@ -384,4 +384,3 @@ def main():
             except KeyboardInterrupt:
                 exit()
 reset()
-main()
