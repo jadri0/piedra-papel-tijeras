@@ -139,6 +139,7 @@ def exit():
 # Función que maneja la elección del jugador.
 def choice_loop():
     global player_choice
+
 # Solicita entrada de texto al jugador para que haga su elección, no distingue entre mayúsculas y minúsculas.
     player_choice = input("¿Piedra, papel o tijeras?: ").strip().lower()
 
@@ -158,6 +159,7 @@ def choice_loop():
 # Función que ejecuta una ronda completa.
 def game_round():
     global computer_score, player_score, player_name
+
 # La elección de la CPU es aleatoria.
     computer_choice = random.choice(choices)    
     choice_loop()
@@ -277,8 +279,10 @@ def game_round():
 def main():
     global computer_score, player_score, player_name
     try:
+
 # Limpia la pantalla.
         os.system("clear||cls")
+
 # Determina el tamaño de la ventana y extrae dos valores numéricos del string resultante de os.get_terminal_size; uno para las columnas y otro para las líneas.
         size = os.get_terminal_size()
         str_size = str(size)
