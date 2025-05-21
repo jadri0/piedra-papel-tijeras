@@ -136,11 +136,6 @@ def exit():
         except KeyboardInterrupt:
             exit()
 
-# Función que limpia la pantalla y vuelve a lanzar el programa desde el principio.
-def reset():
-    os.system("clear||cls")
-    main()
-
 # Función que maneja la elección del jugador.
 def choice_loop():
     global player_choice
@@ -151,7 +146,7 @@ def choice_loop():
     if player_choice == "salir":
         raise KeyboardInterrupt
     if player_choice == "reset":
-        reset()
+        main()
 
 # Si el jugador introduce un valor no válido, solicita entrada de texto de nuevo.
 # Repite el loop hasta que se introduce un valor válido (piedra, papel o tijeras).
@@ -160,7 +155,7 @@ def choice_loop():
             print("\nCreo que no te he entendido bien... Probemos de nuevo.\n")
             choice_loop()
 
-# La función game_round() ejecuta una ronda completa.
+# Función que ejecuta una ronda completa.
 def game_round():
     global computer_score, player_score, player_name
 # La elección de la CPU es aleatoria.
@@ -282,6 +277,8 @@ def game_round():
 def main():
     global computer_score, player_score, player_name
     try:
+# Limpia la pantalla.
+        os.system("clear||cls")
 # Determina el tamaño de la ventana y extrae dos valores numéricos del string resultante de os.get_terminal_size; uno para las columnas y otro para las líneas.
         size = os.get_terminal_size()
         str_size = str(size)
@@ -329,7 +326,7 @@ def main():
             if game_mode == "salir":
                 raise KeyboardInterrupt
             if game_mode == "reset":
-                reset()
+                main()
             else:
                 if game_mode in gamemodes:
                     break
@@ -342,7 +339,7 @@ def main():
         print(separator)
 
 # Marcador que lleva la cuenta de las rondas ganadas por el jugador y por la CPU.
-# Se encuentra dentro de main() para que los valores se mantengan entre rondas, pero vuelvan a 0 al resetear.
+# Se encuentra dentro de main para que los valores se mantengan entre rondas, pero vuelvan a 0 al resetear.
         player_score = 0 
         computer_score = 0
 
@@ -371,7 +368,7 @@ def main():
         if end_of_game == "salir":
             raise KeyboardInterrupt
         if end_of_game == "reset":
-            reset()
+            main()
 
 # Excepción para evitar mensaje de error al pulsar Ctrl + C.
     except KeyboardInterrupt:
@@ -382,4 +379,4 @@ def main():
             except KeyboardInterrupt:
                 exit()
 
-reset()
+main()
