@@ -353,17 +353,17 @@ def main():
         while True:
             if game_mode == "3":
                 if player_score == 2:
-                    print("¡Felicidades, has ganado la partida!")
+                    print(f"¡Felicidades, {player_name}, has ganado la partida!")
                     break
                 if computer_score == 2:
-                    print("Vaya... has perdido la partida...")
+                    print(f"Vaya, {player_name}... has perdido la partida...")
                     break
             if game_mode == "5":
                 if player_score == 3:
-                    print("¡Felicidades, has ganado la partida!")
+                    print(f"¡Felicidades, {player_name}, has ganado la partida!")
                     break
                 if computer_score == 3:
-                    print("Vaya... has perdido la partida...")
+                    print(f"Vaya, {player_name}... has perdido la partida...")
                     break
             game_round()
 
